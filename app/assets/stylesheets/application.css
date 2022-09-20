@@ -27,3 +27,9 @@ body {
 table th {
   padding-bottom: 5px;
 }
+
+td {
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+}

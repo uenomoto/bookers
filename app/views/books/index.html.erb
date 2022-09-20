@@ -13,24 +13,35 @@
     <tr>
       <td><%= book.title %></td>
       <td><%= book.body %></td>
-      <% end %>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td><%= link_to "show",book_path(book.id) %></td>
+      <td><%= link_to "edit",edit_book_path(book.id)%></td>
+      <td><%= link_to "destroy",book_path(book.id),method: :delete,"data-confirm" => "Are you sure?" %></td>
     </tr>
+    <% end %>
   </tbody>
 </table>
 
 <h2>New book</h2>
-
-<%= form_with model: @book, url: "/books", method: :post do |f| %>
-
-<label>Title</label>
-<%= f.text_field :title %>
-
-<label>Body</label>
-<%= f.text_area :body %>
-
-<%= f.submit "Create Book" %>
-
+<% if @book.errors.any? %>
+<ul>
+  <% @book.errors.full_messages.each do |message| %>
+  <li><%= message %></li>
 <% end %>
+</ul>
+<% end %>
+<%= form_with model: @book do |f| %>
+
+<form class="new_book" id="new_book" action="/books" accept-charset="UTF-8" method="post">
+<div class="field">
+ <%= f.label :Title %></br>
+  <%= f.text_field :title %>
+</div>
+<div class="field">
+ <%= f.label :Body %></br>
+ <%= f.text_area :body %>
+</div>
+<div class="actions">
+ <%= f.submit "Create Book" %>
+</div>
+<% end %>
+</form>

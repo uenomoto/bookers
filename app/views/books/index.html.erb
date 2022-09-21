@@ -29,19 +29,18 @@
 <% end %>
 </ul>
 <% end %>
-<%= form_with model: @book do |f| %>
 
-<form class="new_book" id="new_book" action="/books" accept-charset="UTF-8" method="post">
+<%= form_for @book do |form| %>
+
 <div class="field">
- <%= f.label :Title %></br>
-  <%= f.text_field :title %>
+ <%= form.label :Title %></br>
+  <%= form.text_field :title %>
 </div>
 <div class="field">
- <%= f.label :Body %></br>
- <%= f.text_area :body %>
+ <%= form.label :Body %></br>
+ <%= form.text_area :body %>
 </div>
 <div class="actions">
- <%= f.submit "Create Book" %>
+ <%= form.submit %></br>
 </div>
 <% end %>
-</form>

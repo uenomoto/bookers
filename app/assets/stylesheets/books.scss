@@ -1,3 +1,15 @@
 // Place all the styles related to the books controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+$validates: 1;
+
+.field_with_errors {
+  @if validates == 1 {
+  padding: 2px;
+  background-color: red;
+  display: table;
+  }
+  @else {
+  
+  }
+}

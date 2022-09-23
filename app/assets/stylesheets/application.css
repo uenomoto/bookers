@@ -67,8 +67,3 @@ td {
   font-size: 12px;
   list-style: square;
 }
-.field_with_errors  {
-  padding: 2px;
-  background-color: red;
-  display: table;
-}

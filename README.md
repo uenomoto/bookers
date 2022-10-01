@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+課題「アプリケーションを作成してみよう」（基礎編）です
+確認お願いします。
